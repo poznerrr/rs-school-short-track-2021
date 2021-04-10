@@ -17,7 +17,7 @@ function deleteDigit(n) {
     z.splice(i, 1);
     maximax.push(Number(z.join('')));
   }
-  return Math.max.apply(null, maximax); //from developer.mozilla.com, hz how it works =)
+  return Math.max.apply(null, maximax);
 }
 
 module.exports = deleteDigit;
