@@ -17,7 +17,30 @@
  * }
  */
 
-function removeKFromList(/* l, k  */) {
-  throw new Error('Not implemented');
+const ListNode = require('../extensions/list-node');
+
+function removeKFromList(l, k) {
+  let answer = null;
+  let node = null;
+  let current = l;
+  while (true) {
+    if (current.value === k) {
+      current = current.next;
+    } else if (answer === null) {
+      answer = new ListNode(current.value);
+      node = answer;
+      current = current.next;
+    } else {
+      while (node.next) {
+        node = node.next;
+      }
+      node.next = new ListNode(current.value);
+      current = current.next;
+    }
+    if (current === null) {
+      return answer;
+    }
+  }
 }
+
 module.exports = removeKFromList;
