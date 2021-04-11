@@ -23,7 +23,7 @@ function removeKFromList(l, k) {
   let answer = null;
   let node = null;
   let current = l;
-  while (true) {
+  while (current !== null) {
     if (current.value === k) {
       current = current.next;
     } else if (answer === null) {
@@ -38,10 +38,8 @@ function removeKFromList(l, k) {
       current = current.next;
       node = node.next;
     }
-    if (current === null) {
-      return answer;
-    }
   }
+  return answer;
 }
 
 module.exports = removeKFromList;
