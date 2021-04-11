@@ -31,11 +31,12 @@ function removeKFromList(l, k) {
       node = answer;
       current = current.next;
     } else {
-      while (node.next) {
+    /*  while (node.next) {
         node = node.next;
-      }
+      } */
       node.next = new ListNode(current.value);
       current = current.next;
+      node = node.next;
     }
     if (current === null) {
       return answer;
